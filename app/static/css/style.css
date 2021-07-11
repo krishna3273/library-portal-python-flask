@@ -1,0 +1,72 @@
+p {
+  position: relative;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-family: 'Gloria Hallelujah';
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 300;
+  line-height: 1.9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+input[type=radio] {
+  display: none;
+}
+input[type=radio] + span {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  color: rgba(0, 0, 66, 0.4);
+  -webkit-transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
+  cursor: pointer;
+}
+input[type=radio] + span::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 65%;
+  left: -5%;
+  width: 110%;
+  height: .1em;
+  border-radius: .05em;
+  background-color: rgba(150, 0, 0, 0.8);
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: rotateZ(-6deg);
+          transform: rotateZ(-6deg);
+  opacity: 1;
+  -webkit-transition: width 300ms ease-in;
+  transition: width 300ms ease-in;
+}
+input[type=radio]:checked + span {
+  color: rgba(0, 0, 66, 0.8);
+  cursor: default;
+}
+input[type=radio]:checked + span::after {
+  width: 0%;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-out, width 0ms linear 200ms;
+  transition: opacity 150ms ease-out, width 0ms linear 200ms;
+}
+
+label:nth-of-type(2) input[type=radio] + span::after {
+  top: 45%;
+  -webkit-transform: rotateZ(2deg);
+          transform: rotateZ(2deg);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+ }
